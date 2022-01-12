@@ -3,15 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-<<<<<<< HEAD
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/fragment_sign_up_screen.xml" value="0.25" />
-=======
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.19010416666666666" />
         <entry key="app/src/main/res/layout/fragment_login_screen.xml" value="0.2390625" />
+        <entry key="app/src/main/res/layout/fragment_profile_screen.xml" value="0.2671875" />
+        <entry key="app/src/main/res/layout/fragment_sign_up_screen.xml" value="0.13645833333333332" />
         <entry key="app/src/main/res/layout/fragment_timeline_screen.xml" value="0.18125" />
         <entry key="app/src/main/res/menu/navigation_menu.xml" value="0.1953125" />
->>>>>>> 33ce1e025fdc2349d184977e108b88914d174b2c
       </map>
     </option>
   </component>
