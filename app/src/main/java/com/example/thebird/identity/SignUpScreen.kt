@@ -11,6 +11,7 @@ import android.widget.EditText
 import android.widget.TextView
 import androidx.navigation.fragment.findNavController
 import com.example.thebird.R
+import com.example.thebird.util.SharedPrefUtil
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
@@ -35,7 +36,7 @@ class SignUpScreen : Fragment() {
         var signUpEmailEditText = v.findViewById<EditText>(R.id.editTextSignUpEmail)
         var passwordEditText = v.findViewById<EditText>(R.id.editTextTextPassword)
         var signUpButton = v.findViewById<Button>(R.id.buttonSignUp)
-        var loginTextView=v.findViewById<TextView>(R.id.textViewLogin)
+        var loginTextView = v.findViewById<TextView>(R.id.textViewLogin)
         var auth = Firebase.auth
 
 
@@ -53,6 +54,7 @@ class SignUpScreen : Fragment() {
                     if (task.isSuccessful) {
 
                         println("User has been registered successfully with UID " + auth.currentUser?.uid)
+                        SharedPrefUtil.get().setUserID(auth.currentUser?.uid)
 
                         val u = hashMapOf(
                             "email" to auth.currentUser?.email,
@@ -67,9 +69,6 @@ class SignUpScreen : Fragment() {
                             .set(u)
 
                     }
-
-
-
 
 
                 }

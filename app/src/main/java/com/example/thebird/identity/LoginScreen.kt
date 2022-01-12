@@ -1,6 +1,7 @@
 package com.example.thebird.identity
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -12,10 +13,9 @@ import com.example.thebird.databinding.FragmentLoginScreenBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.auth.FirebaseAuth
 import androidx.appcompat.app.AppCompatActivity
+import com.example.thebird.util.SharedPrefUtil
 
-
-
-
+private const val TAG = "LoginScreen"
 class LoginScreen : Fragment() {
 
     //define the binding variable for this fragment.
@@ -52,6 +52,8 @@ class LoginScreen : Fragment() {
             if (email.isNotBlank() && password.isNotBlank()) {
                 firebaseAuth.signInWithEmailAndPassword(email, password).addOnSuccessListener {
                     Toast.makeText(activity, "Logged in successfully!", Toast.LENGTH_SHORT).show()
+                    SharedPrefUtil.get().setUserID(firebaseAuth.currentUser?.uid)
+                    Log.d(TAG,"USERID is: ${firebaseAuth.currentUser?.uid}")
                     findNavController().navigate(R.id.action_loginScreen_to_timelineScreen)
                 }.addOnFailureListener {
                     Toast.makeText(activity, it.message.toString(), Toast.LENGTH_SHORT).show()
