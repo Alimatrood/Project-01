@@ -13,6 +13,7 @@ import com.example.thebird.databinding.FragmentLoginScreenBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.auth.FirebaseAuth
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.activityViewModels
 import com.example.thebird.util.SharedPrefUtil
 
 private const val TAG = "LoginScreen"
@@ -20,6 +21,9 @@ class LoginScreen : Fragment() {
 
     //define the binding variable for this fragment.
     private lateinit var binding: FragmentLoginScreenBinding
+
+    //define loginViewmodel
+    private val viewmodel:LoginViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -51,6 +55,7 @@ class LoginScreen : Fragment() {
             val password = binding.passwordEditText.text.toString()
             if (email.isNotBlank() && password.isNotBlank()) {
                 firebaseAuth.signInWithEmailAndPassword(email, password).addOnSuccessListener {
+                    viewmodel.getUsername()
                     Toast.makeText(activity, "Logged in successfully!", Toast.LENGTH_SHORT).show()
                     SharedPrefUtil.get().setUserID(firebaseAuth.currentUser?.uid)
                     Log.d(TAG,"USERID is: ${firebaseAuth.currentUser?.uid}")

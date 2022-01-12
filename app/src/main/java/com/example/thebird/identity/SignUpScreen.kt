@@ -1,6 +1,5 @@
 package com.example.thebird.identity
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -11,6 +10,7 @@ import android.widget.EditText
 import android.widget.TextView
 import androidx.navigation.fragment.findNavController
 import com.example.thebird.R
+import com.example.thebird.repository.USERS_COLLECTION_NAME
 import com.example.thebird.util.SharedPrefUtil
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.ktx.firestore
@@ -32,7 +32,7 @@ class SignUpScreen : Fragment() {
         // Inflate the layout for this fragment
         var v = inflater.inflate(R.layout.fragment_sign_up_screen, container, false)
         var fnameEditText = v.findViewById<EditText>(R.id.editTextFirstName)
-        var lnameEditText = v.findViewById<EditText>(R.id.editTextLastName)
+        var unameEditText = v.findViewById<EditText>(R.id.editTextUserName)
         var signUpEmailEditText = v.findViewById<EditText>(R.id.editTextSignUpEmail)
         var passwordEditText = v.findViewById<EditText>(R.id.editTextTextPassword)
         var signUpButton = v.findViewById<Button>(R.id.buttonSignUp)
@@ -59,15 +59,16 @@ class SignUpScreen : Fragment() {
                         val u = hashMapOf(
                             "email" to auth.currentUser?.email,
                             "firstname" to fnameEditText.text.toString(),
-                            "lastname" to lnameEditText.text.toString()
-
+                            "username" to unameEditText.text.toString()
                         )
 
                         var db = Firebase.firestore
 
-                        db.collection("users").document(auth.currentUser?.uid.toString())
-                            .set(u)
-
+                        db.collection(USERS_COLLECTION_NAME).document(auth.currentUser?.uid.toString())
+                            .set(u).addOnSuccessListener {
+                                SharedPrefUtil.get().setUsername(unameEditText.text.toString())
+                                findNavController().navigate(R.id.action_signUpScreen_to_timelineScreen)
+                            }
                     }
 
 

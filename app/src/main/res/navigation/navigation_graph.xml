@@ -31,6 +31,9 @@
             app:destination="@id/loginScreen"
             app:popUpTo="@id/signUpScreen"
             app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_signUpScreen_to_timelineScreen"
+            app:destination="@id/timelineScreen" />
     </fragment>
     <fragment
         android:id="@+id/timelineScreen"
@@ -66,5 +69,11 @@
         android:id="@+id/newPostScreen"
         android:name="com.example.thebird.home.NewPostScreen"
         android:label="New Post"
-        tools:layout="@layout/fragment_new_post_screen" />
+        tools:layout="@layout/fragment_new_post_screen" >
+        <action
+            android:id="@+id/action_newPostScreen_to_timelineScreen"
+            app:destination="@id/timelineScreen"
+            app:popUpTo="@id/newPostScreen"
+            app:popUpToInclusive="true" />
+    </fragment>
 </navigation>
