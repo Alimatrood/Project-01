@@ -11,4 +11,5 @@
     <color name="light_blue">#6998AB</color>
     <color name="black_85">#D9000000</color>
     <color name="button_color">#406882</color>
+    <color name="status_bar_color">#6998AB</color>
 </resources>

@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.findNavController
 import com.example.thebird.util.SharedPrefUtil
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -28,6 +29,9 @@ class SplashScreen : Fragment() {
 
         requireActivity().findViewById<BottomNavigationView>(R.id.bottom_nav).visibility =
             View.GONE
+
+        //to hide the actionbar.
+        (activity as AppCompatActivity?)!!.supportActionBar!!.hide()
 
         object : CountDownTimer(3000, 1000) {
             override fun onTick(p0: Long) {

@@ -34,11 +34,11 @@ class LoginScreen : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        //to hide the bottom navigation in the main activity
-        activity?.findViewById<BottomNavigationView>(R.id.bottom_nav)?.visibility = View.GONE
-
-        //to hide the actionbar.
-        (activity as AppCompatActivity?)!!.supportActionBar!!.hide()
+//        //to hide the bottom navigation in the main activity
+//        activity?.findViewById<BottomNavigationView>(R.id.bottom_nav)?.visibility = View.GONE
+//
+//        //to hide the actionbar.
+//        (activity as AppCompatActivity?)!!.supportActionBar!!.hide()
 
 
 
