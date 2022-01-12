@@ -13,6 +13,11 @@
         <action
             android:id="@+id/action_loginScreen_to_signUpScreen"
             app:destination="@id/signUpScreen" />
+        <action
+            android:id="@+id/action_loginScreen_to_timelineScreen"
+            app:destination="@id/timelineScreen"
+            app:popUpTo="@id/loginScreen"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/signUpScreen"
@@ -23,4 +28,14 @@
             android:id="@+id/action_signUpScreen_to_loginScreen"
             app:destination="@id/loginScreen" />
     </fragment>
+    <fragment
+        android:id="@+id/timelineScreen"
+        android:name="com.example.thebird.home.TimelineScreen"
+        android:label="fragment_timeline_screen"
+        tools:layout="@layout/fragment_timeline_screen" />
+    <fragment
+        android:id="@+id/profileScreen"
+        android:name="com.example.thebird.identity.ProfileScreen"
+        android:label="fragment_profile_screen"
+        tools:layout="@layout/fragment_profile_screen" />
 </navigation>
