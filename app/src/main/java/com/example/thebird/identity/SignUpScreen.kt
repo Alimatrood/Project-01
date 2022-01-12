@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import androidx.navigation.fragment.findNavController
 import com.example.thebird.R
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.ktx.firestore
@@ -39,7 +40,7 @@ class SignUpScreen : Fragment() {
 
 
         loginTextView.setOnClickListener {
-            startActivity(Intent(context,LoginScreen::class.java))
+            findNavController().navigate(R.id.action_signUpScreen_to_loginScreen)
         }
 
         signUpButton.setOnClickListener {

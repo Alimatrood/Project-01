@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation_graph"
-    app:startDestination="@id/signUpScreen">
+    app:startDestination="@id/loginScreen">
 
     <fragment
         android:id="@+id/loginScreen"
@@ -12,7 +12,9 @@
         tools:layout="@layout/fragment_login_screen" >
         <action
             android:id="@+id/action_loginScreen_to_signUpScreen"
-            app:destination="@id/signUpScreen" />
+            app:destination="@id/signUpScreen"
+            app:popUpTo="@id/loginScreen"
+            app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_loginScreen_to_timelineScreen"
             app:destination="@id/timelineScreen"
@@ -26,7 +28,9 @@
         tools:layout="@layout/fragment_sign_up_screen" >
         <action
             android:id="@+id/action_signUpScreen_to_loginScreen"
-            app:destination="@id/loginScreen" />
+            app:destination="@id/loginScreen"
+            app:popUpTo="@id/signUpScreen"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/timelineScreen"
