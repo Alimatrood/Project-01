@@ -9,7 +9,12 @@ import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import com.example.thebird.R
 import com.example.thebird.databinding.FragmentLoginScreenBinding
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.auth.FirebaseAuth
+import androidx.appcompat.app.AppCompatActivity
+
+
+
 
 class LoginScreen : Fragment() {
 
@@ -29,12 +34,22 @@ class LoginScreen : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        //to hide the bottom navigation in the main activity
+        activity?.findViewById<BottomNavigationView>(R.id.bottom_nav)?.visibility = View.GONE
+
+        //to hide the actionbar.
+        (activity as AppCompatActivity?)!!.supportActionBar!!.hide()
+
+
+
+        //to get the instance of the firebase auth.
         val firebaseAuth = FirebaseAuth.getInstance()
 
+        //to handle the click on the login button.
         binding.loginButton.setOnClickListener {
             val email = binding.emailEditText.text.toString()
             val password = binding.passwordEditText.text.toString()
-            if (email.isNotEmpty() && password.isNotEmpty()) {
+            if (email.isNotBlank() && password.isNotBlank()) {
                 firebaseAuth.signInWithEmailAndPassword(email, password).addOnSuccessListener {
                     Toast.makeText(activity, "Logged in successfully!", Toast.LENGTH_SHORT).show()
                     findNavController().navigate(R.id.action_loginScreen_to_timelineScreen)
