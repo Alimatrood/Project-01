@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "162085407255",
+    "project_id": "socialmedia-99ac7",
+    "storage_bucket": "socialmedia-99ac7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:162085407255:android:5ce1bf37286e6b7ca66a52",
+        "android_client_info": {
+          "package_name": "com.example.thebird"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "162085407255-sljn96usdtg2q9r8bdp0ajm4n5iv472d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA_1UkY8iXd73m5UcMjQJgJfz_l18N4dvM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "162085407255-sljn96usdtg2q9r8bdp0ajm4n5iv472d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
