@@ -29,7 +29,11 @@
         android:layout_marginTop="32dp"
         android:layout_marginEnd="15dp"
         android:ems="10"
+<<<<<<< HEAD
         android:hint="UserName"
+=======
+        android:hint="Username"
+>>>>>>> 6471962baa34bf3237ec9b8e8a1f59353cd885f8
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -69,6 +73,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
         android:layout_marginTop="37dp"
+        android:backgroundTint="@color/button_color"
         android:text="Sign Up"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword" />
@@ -80,6 +85,7 @@
         android:layout_marginStart="15dp"
         android:layout_marginTop="100dp"
         android:layout_marginEnd="15dp"
+        android:fontFamily="@font/roboto_bold"
         android:text="SignUp"
         android:textAlignment="center"
         android:textColor="#070707"
@@ -95,12 +101,15 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="64dp"
         android:layout_marginEnd="16dp"
-        android:text="Already have an account? Login"
+        android:layout_marginBottom="16dp"
+        android:fontFamily="@font/roboto"
+        android:text="Already have an account? Click here to login"
         android:textColor="#0C0C0C"
-        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonSignUp" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonSignUp"
+        app:layout_constraintVertical_bias="1.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>
 
 
