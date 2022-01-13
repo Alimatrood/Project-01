@@ -48,6 +48,7 @@ class TimelineScreen : Fragment() {
 
         observe()
         viewmodel.getPosts()
+        viewmodel.getAllFavoritesForUser()
 
 
         //to hide the back arrow in the action bar inside the home fragment.
@@ -76,7 +77,7 @@ class TimelineScreen : Fragment() {
                 allPostsList.addAll(it)
                // adapter.submitList(it)
                 Log.d(TAG,"ALL POSTS LIST inside its observe: $allPostsList")
-                viewmodel.postsListMutableLiveData.postValue(null)
+                //viewmodel.postsListMutableLiveData.postValue(null)
                 viewmodel.getAllFavoritesForUser()
 
             }
@@ -89,7 +90,7 @@ class TimelineScreen : Fragment() {
         })
         viewmodel.favoriteListMutableLiveData.observe(viewLifecycleOwner,{
             it?.let {
-
+                favoriteList.clear()
                 favoriteList.addAll(it)
                 Log.d(TAG,"Favorite list inside its observe: $favoriteList")
                 adapter.submitList(allPostsList,favoriteList)

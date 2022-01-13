@@ -109,8 +109,9 @@ class TimelineViewModel : ViewModel() {
                 Log.d(TAG, "There is an error while listening $e")
                 errorFavoritesList.postValue(e.message)
             }
+            favoriteList.clear()
             if (!querySnapshot!!.isEmpty) {
-                favoriteList.clear()
+
                 val documents = querySnapshot.documents
                 Log.d(TAG,"Inside the get favorites function, inside the if statement")
                 documents.forEach {

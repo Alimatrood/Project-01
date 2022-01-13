@@ -72,6 +72,7 @@ class PostsAdapter(private val viewmodel: TimelineViewModel) :
 
     fun submitList(list: List<Post>, favorites: List<Post>) {
         differ.submitList(list)
+        favoriteList.clear()
         favoriteList.addAll(favorites)
     }
 
