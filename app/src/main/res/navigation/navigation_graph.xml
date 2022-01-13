@@ -9,8 +9,8 @@
     <fragment
         android:id="@+id/loginScreen"
         android:name="com.example.thebird.identity.LoginScreen"
-        android:label="fragment_login_screen"
-        tools:layout="@layout/fragment_login_screen" >
+        android:label="Login"
+        tools:layout="@layout/fragment_login_screen">
         <action
             android:id="@+id/action_loginScreen_to_signUpScreen"
             app:destination="@id/signUpScreen"
@@ -25,8 +25,8 @@
     <fragment
         android:id="@+id/signUpScreen"
         android:name="com.example.thebird.identity.SignUpScreen"
-        android:label="fragment_sign_up_screen"
-        tools:layout="@layout/fragment_sign_up_screen" >
+        android:label="SignUp"
+        tools:layout="@layout/fragment_sign_up_screen">
         <action
             android:id="@+id/action_signUpScreen_to_loginScreen"
             app:destination="@id/loginScreen"

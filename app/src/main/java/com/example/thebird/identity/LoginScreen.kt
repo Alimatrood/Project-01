@@ -40,6 +40,9 @@ class LoginScreen : Fragment() {
 
         //to hide the bottom navigation in the main activity
         activity?.findViewById<BottomNavigationView>(R.id.bottom_nav)?.visibility = View.GONE
+
+        //to hide the back arrow in the action bar inside the home fragment.
+        (requireActivity() as AppCompatActivity).supportActionBar?.setDisplayHomeAsUpEnabled(false)
 //
 //        //to hide the actionbar.
 //        (activity as AppCompatActivity?)!!.supportActionBar!!.hide()

@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.findNavController
 import com.example.thebird.R
 import com.example.thebird.model.User
@@ -34,6 +35,10 @@ class SignUpScreen : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         var v = inflater.inflate(R.layout.fragment_sign_up_screen, container, false)
+
+        //to hide the back arrow in the action bar inside the home fragment.
+        (requireActivity() as AppCompatActivity).supportActionBar?.setDisplayHomeAsUpEnabled(false)
+
         var fnameEditText = v.findViewById<EditText>(R.id.editTextFirstName)
         var unameEditText = v.findViewById<EditText>(R.id.editTextUserName)
         var signUpEmailEditText = v.findViewById<EditText>(R.id.editTextSignUpEmail)

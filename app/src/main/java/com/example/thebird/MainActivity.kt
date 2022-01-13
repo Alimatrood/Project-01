@@ -3,6 +3,7 @@ package com.example.thebird
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import com.example.thebird.identity.SignUpScreen
 
 import androidx.navigation.NavController
@@ -29,5 +30,17 @@ class MainActivity : AppCompatActivity() {
     override fun onSupportNavigateUp(): Boolean {
         navController.navigateUp()
         return true
+    }
+
+
+    override fun onBackPressed() {
+        if (navController.currentDestination?.label == "Login" || navController.currentDestination?.label == "SignUp"
+        ) {
+            finish()
+
+        } else {
+            super.onBackPressed()
+        }
+
     }
 }

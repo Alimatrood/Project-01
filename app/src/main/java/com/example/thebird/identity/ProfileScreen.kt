@@ -18,6 +18,7 @@ import com.google.firebase.storage.StorageReference
 import com.google.firebase.storage.UploadTask
 
 import android.view.*
+import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.findNavController
 import com.example.thebird.model.User
 import com.example.thebird.util.SharedPrefUtil
@@ -48,6 +49,10 @@ var user= FirebaseAuth.getInstance().currentUser
 
         // Inflate the layout for this fragment
         var v=  inflater.inflate(R.layout.fragment_profile_screen, container, false)
+
+        //to hide the back arrow in the action bar inside the home fragment.
+        (requireActivity() as AppCompatActivity).supportActionBar?.setDisplayHomeAsUpEnabled(false)
+
         val db = Firebase.firestore
         val uid = FirebaseAuth.getInstance().currentUser!!.uid
 
@@ -68,7 +73,12 @@ var user= FirebaseAuth.getInstance().currentUser
         ProfileViewModel().getUserData().observe(viewLifecycleOwner,{
             nameTextView.text=it.firstname
             userNameTextView.text=it.username
-            Picasso.get().load(it.avatar).into(profileImage)
+            if (it.avatar.isNotBlank()){
+                Picasso.get().load(it.avatar).into(profileImage)
+            }
+
+
+
 
 
         })
