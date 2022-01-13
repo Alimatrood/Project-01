@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">TheBird</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="login">Login</string>
+    <string name="do_not_have_an_account">Do not have an account? Click here to register</string>
 </resources>

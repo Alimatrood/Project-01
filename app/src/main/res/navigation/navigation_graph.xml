@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_graph"
+
+    app:startDestination="@id/splashScreen">
+
+    <fragment
+        android:id="@+id/loginScreen"
+        android:name="com.example.thebird.identity.LoginScreen"
+        android:label="Login"
+        tools:layout="@layout/fragment_login_screen">
+        <action
+            android:id="@+id/action_loginScreen_to_signUpScreen"
+            app:destination="@id/signUpScreen"
+            app:popUpTo="@id/loginScreen"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_loginScreen_to_timelineScreen"
+            app:destination="@id/timelineScreen"
+            app:popUpTo="@id/loginScreen"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/signUpScreen"
+        android:name="com.example.thebird.identity.SignUpScreen"
+        android:label="SignUp"
+        tools:layout="@layout/fragment_sign_up_screen">
+        <action
+            android:id="@+id/action_signUpScreen_to_loginScreen"
+            app:destination="@id/loginScreen"
+            app:popUpTo="@id/signUpScreen"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_signUpScreen_to_timelineScreen"
+            app:destination="@id/timelineScreen" />
+    </fragment>
+    <fragment
+        android:id="@+id/timelineScreen"
+        android:name="com.example.thebird.home.TimelineScreen"
+        android:label="Timeline"
+        tools:layout="@layout/fragment_timeline_screen">
+        <action
+            android:id="@+id/action_timelineScreen_to_newPostScreen"
+            app:destination="@id/newPostScreen" />
+        <action
+            android:id="@+id/action_timelineScreen_to_directMessagesScreen"
+            app:destination="@id/directMessagesScreen" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileScreen"
+        android:name="com.example.thebird.identity.ProfileScreen"
+        android:label="Profile"
+        tools:layout="@layout/fragment_profile_screen" >
+        <action
+            android:id="@+id/action_profileScreen_to_loginScreen"
+            app:destination="@id/loginScreen"
+            app:popUpTo="@id/profileScreen"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/splashScreen"
+        android:name="com.example.thebird.SplashScreen"
+        android:label="fragment_splash_screen"
+        tools:layout="@layout/fragment_splash_screen" >
+        <action
+            android:id="@+id/action_splashScreen_to_loginScreen"
+            app:destination="@id/loginScreen"
+            app:popUpTo="@id/splashScreen"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_splashScreen_to_timelineScreen"
+            app:destination="@id/timelineScreen"
+            app:popUpTo="@id/splashScreen"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/newPostScreen"
+        android:name="com.example.thebird.home.NewPostScreen"
+        android:label="New Post"
+        tools:layout="@layout/fragment_new_post_screen" >
+        <action
+            android:id="@+id/action_newPostScreen_to_timelineScreen"
+            app:destination="@id/timelineScreen"
+            app:popUpTo="@id/newPostScreen"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/directMessagesScreen"
+        android:name="com.example.thebird.home.DirectMessagesScreen"
+        android:label="fragment_direct_messages_screen"
+        tools:layout="@layout/fragment_direct_messages_screen" />
+</navigation>
