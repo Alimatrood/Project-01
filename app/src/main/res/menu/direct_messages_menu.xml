@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:title="Direct Messages" android:icon="@drawable/ic_baseline_local_post_office_24" app:showAsAction="always" android:id="@+id/direct_messages" />
+
+</menu>

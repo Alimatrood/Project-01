@@ -44,6 +44,9 @@
         <action
             android:id="@+id/action_timelineScreen_to_newPostScreen"
             app:destination="@id/newPostScreen" />
+        <action
+            android:id="@+id/action_timelineScreen_to_directMessagesScreen"
+            app:destination="@id/directMessagesScreen" />
     </fragment>
     <fragment
         android:id="@+id/profileScreen"
@@ -77,4 +80,9 @@
             app:popUpTo="@id/newPostScreen"
             app:popUpToInclusive="true" />
     </fragment>
+    <fragment
+        android:id="@+id/directMessagesScreen"
+        android:name="com.example.thebird.home.DirectMessagesScreen"
+        android:label="fragment_direct_messages_screen"
+        tools:layout="@layout/fragment_direct_messages_screen" />
 </navigation>
