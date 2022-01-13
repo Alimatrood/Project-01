@@ -22,7 +22,7 @@ TheBird is a social media application where users can make posts, and browse oth
 
 ### *Problems to be solved in future iterations*
 
-- A glitch where multiple favorite icons would be chosen automatically
+- A glitch where multiple favorite icons would be triggered when adding some posts to favorite.
 
 -------------------
 ### features to be added in next iterations*
