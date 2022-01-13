@@ -41,8 +41,11 @@ class NewPostScreen : Fragment() {
             val text = binding.postEditText.text.toString()
             val username = SharedPrefUtil.get().getUsername()
             val timestamp: Long = Calendar.getInstance().timeInMillis
-            viewModel.addPost(Post(text, username!!, timestamp))
+            viewModel.addPost(Post(null,text, username!!, timestamp))
         }
+//        binding.uploadImageButton.setOnClickListener {
+//
+//        }
 
     }
 
