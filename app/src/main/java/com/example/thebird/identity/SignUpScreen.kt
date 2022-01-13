@@ -30,7 +30,7 @@ class SignUpScreen : Fragment() {
         // Inflate the layout for this fragment
         var v = inflater.inflate(R.layout.fragment_sign_up_screen, container, false)
         var fnameEditText = v.findViewById<EditText>(R.id.editTextFirstName)
-        var lnameEditText = v.findViewById<EditText>(R.id.editTextLastName)
+        var unameEditText = v.findViewById<EditText>(R.id.editTextUserName)
         var signUpEmailEditText = v.findViewById<EditText>(R.id.editTextSignUpEmail)
         var passwordEditText = v.findViewById<EditText>(R.id.editTextTextPassword)
         var signUpButton = v.findViewById<Button>(R.id.buttonSignUp)
@@ -56,7 +56,7 @@ class SignUpScreen : Fragment() {
                         val u = hashMapOf(
                             "email" to auth.currentUser?.email,
                             "firstname" to fnameEditText.text.toString(),
-                            "lastname" to lnameEditText.text.toString()
+                            "username" to unameEditText.text.toString()
 
                         )
 
