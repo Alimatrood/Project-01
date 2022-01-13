@@ -49,7 +49,13 @@
         android:id="@+id/profileScreen"
         android:name="com.example.thebird.identity.ProfileScreen"
         android:label="Profile"
-        tools:layout="@layout/fragment_profile_screen" />
+        tools:layout="@layout/fragment_profile_screen" >
+        <action
+            android:id="@+id/action_profileScreen_to_loginScreen"
+            app:destination="@id/loginScreen"
+            app:popUpTo="@id/profileScreen"
+            app:popUpToInclusive="true" />
+    </fragment>
     <fragment
         android:id="@+id/splashScreen"
         android:name="com.example.thebird.SplashScreen"

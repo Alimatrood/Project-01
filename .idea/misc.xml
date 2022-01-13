@@ -8,20 +8,14 @@
         <entry key="app/src/main/res/drawable/img.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.15" />
         <entry key="app/src/main/res/layout/fragment_login_screen.xml" value="0.20677083333333332" />
+        <entry key="app/src/main/res/layout/fragment_new_post_screen.xml" value="0.20677083333333332" />
         <entry key="app/src/main/res/layout/fragment_profile_screen.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_sign_up_screen.xml" value="0.25" />
-
-        <entry key="app/src/main/res/drawable/ic_baseline_add_24.xml" value="0.20416666666666666" />
-        <entry key="app/src/main/res/drawable/ic_baseline_image_24.xml" value="0.2601851851851852" />
-        <entry key="app/src/main/res/drawable/rectangle.xml" value="0.2601851851851852" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.19010416666666666" />
-        <entry key="app/src/main/res/layout/fragment_login_screen.xml" value="0.2390625" />
-        <entry key="app/src/main/res/layout/fragment_new_post_screen.xml" value="0.2671875" />
-        <entry key="app/src/main/res/layout/fragment_profile_screen.xml" value="0.2671875" />
-        <entry key="app/src/main/res/layout/fragment_sign_up_screen.xml" value="0.1955395460931565" />
-        <entry key="app/src/main/res/layout/fragment_timeline_screen.xml" value="0.18125" />
-        <entry key="app/src/main/res/layout/post_layout.xml" value="0.2671875" />
-        <entry key="app/src/main/res/menu/navigation_menu.xml" value="0.1953125" />
+        <entry key="app/src/main/res/layout/fragment_splash_screen.xml" value="0.20677083333333332" />
+        <entry key="app/src/main/res/layout/fragment_timeline_screen.xml" value="0.20677083333333332" />
+        <entry key="app/src/main/res/layout/post_layout.xml" value="0.33" />
+        <entry key="app/src/main/res/menu/navigation_menu.xml" value="0.20677083333333332" />
+        <entry key="app/src/main/res/menu/profile_menu.xml" value="0.20677083333333332" />
       </map>
     </option>
   </component>

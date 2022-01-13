@@ -1,13 +1,14 @@
 package com.example.thebird.util
 
 import android.content.Context
-import android.content.SharedPreferences
+import android.net.Uri
 import java.lang.Exception
 
 
 private const val SHARED_PREF_FILE = "auth"
 private const val USERNAME_KEY = "username"
 private const val USER_ID_KEY = "user_Id"
+private const val USER_AVATAR="user_avatar"
 
 //a class to be used for sharedPreferences in all the application.
 class SharedPrefUtil(context: Context) {
@@ -34,6 +35,16 @@ class SharedPrefUtil(context: Context) {
     //a function to retrieve the userID of the logged user from the sharedPreferences.
     fun getUserId(): String? {
         return sharedPref.getString(USER_ID_KEY, "")
+    }
+
+
+    fun setUserAvatar(avatar: Uri){
+        sharedPrefEditor.putString(USER_AVATAR, avatar.toString()).commit()
+
+    }
+
+    fun getUserAvatar(): String? {
+        return sharedPref.getString(USER_AVATAR,"")
     }
 
 

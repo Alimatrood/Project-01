@@ -29,11 +29,10 @@
         android:layout_marginTop="32dp"
         android:layout_marginEnd="15dp"
         android:ems="10"
-<<<<<<< HEAD
+
         android:hint="UserName"
-=======
-        android:hint="Username"
->>>>>>> 6471962baa34bf3237ec9b8e8a1f59353cd885f8
+
+
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

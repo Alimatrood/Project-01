@@ -10,6 +10,7 @@ import android.widget.EditText
 import android.widget.TextView
 import androidx.navigation.fragment.findNavController
 import com.example.thebird.R
+import com.example.thebird.model.User
 import com.example.thebird.repository.USERS_COLLECTION_NAME
 import com.example.thebird.util.SharedPrefUtil
 import com.google.firebase.auth.ktx.auth
@@ -56,16 +57,17 @@ class SignUpScreen : Fragment() {
                         println("User has been registered successfully with UID " + auth.currentUser?.uid)
                         SharedPrefUtil.get().setUserID(auth.currentUser?.uid)
 
-                        val u = hashMapOf(
-                            "email" to auth.currentUser?.email,
-                            "firstname" to fnameEditText.text.toString(),
-                            "username" to unameEditText.text.toString()
-                        )
+//                        val u = hashMapOf(
+//                            "email" to auth.currentUser?.email,
+//                            "firstname" to fnameEditText.text.toString(),
+//                            "username" to unameEditText.text.toString()
+//                        )
+                        val user= User(fnameEditText.text.toString(),unameEditText.text.toString(),auth.currentUser?.email.toString(),"")
 
                         var db = Firebase.firestore
 
                         db.collection(USERS_COLLECTION_NAME).document(auth.currentUser?.uid.toString())
-                            .set(u).addOnSuccessListener {
+                            .set(user).addOnSuccessListener {
                                 SharedPrefUtil.get().setUsername(unameEditText.text.toString())
                                 findNavController().navigate(R.id.action_signUpScreen_to_timelineScreen)
                             }
